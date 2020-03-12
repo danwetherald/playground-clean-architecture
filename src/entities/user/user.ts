@@ -1,14 +1,20 @@
 interface UserDepencies {
+  Id: { gen: (len: number) => string }
   EmailValidator: { validate: (email: string) => boolean }
 }
 
-export default ({ EmailValidator }: UserDepencies) => {
+export default ({ Id, EmailValidator }: UserDepencies) => {
   type UserType = {
+    id: string
     name: string
     email: string
   }
 
-  return ({ name, email }: UserType) => {
+  return ({ id, name, email }: UserType) => {
+    if (!id || id.length < 10) {
+      throw new Error('User must contain a valid ID')
+    }
+
     if (name.length < 3) {
       throw new Error('User must contain a valid name at least 3 characters long.')
     }
@@ -18,6 +24,7 @@ export default ({ EmailValidator }: UserDepencies) => {
     }
 
     return Object.freeze({
+      getId: () => id,
       getName: () => name,
       getEmail: () => email,
     })

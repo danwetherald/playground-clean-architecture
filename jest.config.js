@@ -10,6 +10,7 @@ module.exports = {
   },
   testEnvironment: 'node',
   moduleNameMapper: {
+    '^@utils/(.*)$': '<rootDir>/src/utils/$1',
     '^@fixtures/(.*)$': '<rootDir>/src/__test__/fixtures/$1',
   },
 }

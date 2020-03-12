@@ -12,6 +12,7 @@
     "baseUrl": ".",
     "paths": {
       "*": ["node_modules/*"],
+      "@utils/*": ["src/utils/*"],
       "@fixtures/*": ["src/__test__/fixtures/*"]
     }
   },
