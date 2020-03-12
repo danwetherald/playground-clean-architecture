@@ -1,0 +1,36 @@
+{
+  "name": "clean-architecture",
+  "version": "1.0.0",
+  "main": "dist/index.js",
+  "scripts": {
+    "start": "node dist/index.js",
+    "watch-node": "nodemon dist/index.js",
+    "watch-ts": "tsc -w",
+    "test": "jest --watch",
+    "coverage": "jest --coverage"
+  },
+  "prettier": {
+    "bracketSpacing": true,
+    "singleQuote": true,
+    "semi": false,
+    "useTabs": false,
+    "printWidth": 120,
+    "arrowParens": "avoid",
+    "trailingComma": "es5"
+  },
+  "devDependencies": {
+    "@types/email-validator": "^1.0.6",
+    "@types/faker": "^4.1.10",
+    "@types/jest": "^25.1.4",
+    "@types/node": "^13.9.0",
+    "faker": "^4.1.0",
+    "jest": "^25.1.0",
+    "nodemon": "^2.0.2",
+    "ts-jest": "^25.2.1",
+    "ts-node": "^8.6.2",
+    "typescript": "^3.8.3"
+  },
+  "dependencies": {
+    "email-validator": "^2.0.4"
+  }
+}
